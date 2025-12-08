@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom prose styling for Parsed HTML */
+.prose {
+  @apply text-gray-200;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mt-6 mb-4;
+}
+.prose h2 {
+  @apply text-2xl font-bold mt-5 mb-3;
+}
+.prose h3 {
+  @apply text-xl font-semibold mt-4 mb-2;
+}
+.prose h4 {
+  @apply text-lg font-semibold mt-3 mb-1;
+}
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4;
+}
+.prose ol {
+  @apply list-decimal list-inside mb-4;
+}
+
+prose a {
+  @apply text-blue-600 hover:underline;
+}
+
+.prose strong {
+  @apply font-bold;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose code {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-pink-600;
+}
+
+.prose pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose pre code {
+  @apply bg-transparent text-gray-100 p-0;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
+}
